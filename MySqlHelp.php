@@ -206,11 +206,9 @@ class MySqlHelp {
             text-decoration: underline;
         }
 
-        .c-mysql{ color: #020202; }
-        .c-gt{ color: #80003a; }
-        .c-help{ color: #5e5eff; }
-        .c-name{ color: #ff0000; }
-        .c-semicolon{ color: #970000; }
+        #m-string{ color: #c3c3c3; }
+        #m-light{ font-weight: bold; color: #000000; }
+
     </style>
 </head>
 <body>
@@ -245,12 +243,41 @@ class MySqlHelp {
     <div class="blank"></div>
     <div class="blank"></div>
     <div class="footer">
-        <span class="c-mysql">MySQL</span><span class="c-gt">&gt;</span>
-        <span class="c-help">HELP</span>
-        <span class="c-name">'CONTENTS'</span>
-        <span class="c-semicolon">;</span>
+        <span id="m-string"></span>
+        <span id="m-light" class="c-light">_</span>
     </div>
 </div>
+
+<script type="text/javascript">
+    var split = '&nbsp;&nbsp;';
+    var string = document.getElementById('m-string');
+    var light = document.getElementById('m-light');
+    var marqueeString = '';
+    var marqueeIndex = 0;
+    var marqueePool = [
+        'M', 'y', 'S', 'Q', 'L',
+        '>', split,
+        'H', 'E', 'L', 'P', split,
+        '\'', 'C', 'O', 'N', 'T', 'E', 'N', 'T', 'S', '\'', split,
+        ';'
+    ];
+    setInterval(function () {
+        light.style.display == 'none' ?
+            (light.style.display = 'inline-block') :
+            (light.style.display = 'none');
+    }, 400);
+
+    setInterval(function () {
+        marqueeIndex >= marqueePool.length ? (marqueeString = '') : false;
+        marqueeIndex >= marqueePool.length ? (marqueeIndex = 0) : false;
+
+        marqueeString += marqueePool[marqueeIndex];
+        marqueeIndex++;
+
+        string.innerHTML = marqueeString;
+    }, 800);
+
+</script>
 
 </body>
 </html>
