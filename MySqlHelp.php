@@ -121,6 +121,7 @@ class MySqlHelp {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <title>MySQLHelp</title>
     <style type="text/css">
         a.menu {
@@ -136,6 +137,7 @@ class MySqlHelp {
 
         body{
             margin: 0;
+            font-family: "Levenim MT", "Ubuntu Light", "微软雅黑";
         }
 
         .blank{
